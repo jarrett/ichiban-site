@@ -1,0 +1,21 @@
+<% @page_title = 'Basic HTML'; @body_class = 'manual' %>
+
+<section>
+  <h1>Basic HTML Pages</h1>
+  
+  <p>To add a basic HTML page to your site, create it in the <code>html</code> folder. For
+  example:</p>
+  
+  <%= code_block(4, %Q(
+    # In one terminal:
+    cd my-site
+    ichiban watch
+    
+    # In another terminal:
+    cd my-site
+    edit html/contact-us.html
+  )) %>
+  
+  <p>When you save changes to <code>contact-us.html</code>, the watcher automatically
+  compiles the page, placing the result in the <code>compiled</code> folder.</p>
+</section>

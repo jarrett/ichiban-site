@@ -1,0 +1,19 @@
+@import "library";
+
+body {font-family: $sans; font-weight: 300; font-size: 15px;}
+
+a:link, a:visited, a:hover, a:active {color: #008cc7; text-decoration: none;}
+a:hover, a:active {text-decoration: underline;}
+
+p {margin: 13px 0; line-height: 140%;}
+p:first-child, h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {margin-top: 0;}
+p:last-child {margin-bottom: 0;}
+
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+
+code {white-space: pre; font-family: $mono; font-size: 83%; background: white; padding: 2px; color: #505050;}
+
+code.block {
+  display: block; border: 1px solid #f6f6f6; overflow: auto;
+  box-shadow: 0 0 3px #fafafa inset; padding: 10px; font-size: 12px; line-height: 18px;
+}

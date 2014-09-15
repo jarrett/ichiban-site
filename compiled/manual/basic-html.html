@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Basic HTML - 
+      Ichiban
+    </title>
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,700,400" rel="stylesheet" type="text/css">
+    <link href="/css/screen.css" type="text/css" rel="stylesheet" media="screen"/>
+    
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/js/site.js"></script>
+  </head>
+  
+  <body class="manual">
+    <header>
+      <div class="container">
+        <nav>
+          <h2><a href="/">Ichiban</a></h2>
+              
+          <ul id="main-nav">
+            <li><a href="/manual/">Manual</a></li>
+            <li><a href="/manual/getting-started/">Getting Started</a></li>
+            <li><a href="https://github.com/jarrett/ichiban" target="_blank">Github</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  
+    <div class="container">
+      
+<section>
+  <h1>Basic HTML Pages</h1>
+  
+  <p>To add a basic HTML page to your site, create it in the <code>html</code> folder. For
+  example:</p>
+  
+  <code class="block"># In one terminal:
+cd my-site
+ichiban watch
+
+# In another terminal:
+cd my-site
+edit html/contact-us.html
+</code>
+  
+  <p>When you save changes to <code>contact-us.html</code>, the watcher automatically
+  compiles the page, placing the result in the <code>compiled</code> folder.</p>
+</section>
+      
+      <footer>Copyright 2014 Jarrett Colby. All rights reserved.</footer>
+    </div>
+  </body>
+</html>

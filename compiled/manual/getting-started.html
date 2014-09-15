@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Getting Started - 
+      Ichiban
+    </title>
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,700,400" rel="stylesheet" type="text/css">
+    <link href="/css/screen.css" type="text/css" rel="stylesheet" media="screen"/>
+    
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/js/site.js"></script>
+  </head>
+  
+  <body class="manual">
+    <header>
+      <div class="container">
+        <nav>
+          <h2><a href="/">Ichiban</a></h2>
+              
+          <ul id="main-nav">
+            <li><a href="/manual/">Manual</a></li>
+            <li><a href="/manual/getting-started/">Getting Started</a></li>
+            <li><a href="https://github.com/jarrett/ichiban" target="_blank">Github</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  
+    <div class="container">
+      
+<section>
+  <h1>Getting Started</h1>
+  
+  <p>Install Ichiban and create a new project:</p>
+  
+  <code class="block">gem install ichiban
+ichiban new my-site
+cd my-site
+bundle install
+</code>
+  
+  <p>If you're using Apache, set up a virtual host:</p>
+  
+  <code class="block">Listen 3000
+&lt;VirtualHost *:3000&gt;
+  DocumentRoot &quot;/Users/username/Sites/my-site/compiled&quot;
+  &lt;Directory &quot;/Users/username/Sites/my-site/compiled&quot;&gt;
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code>
+  
+  <p>Replace the paths in the example above with the right ones for your folder layout.
+  If you're not using Apache, start your webserver of choice and set its document root
+  to the <code>compiled</code> folder.</p>
+  
+  <p>To make sure your virtual host is working, point your browser to
+  <code>http://localhost:3000/</code>.</p>
+  
+  <p>Start the watcher.</p>
+  
+  <code class="block">ichiban watch
+
+# Or, to avoid possible gem version issues:
+bundle exec ichiban watch
+</code>
+  
+  <p>With this running, any changes you make will be reflected in the
+  <code>compiled</code> folder automatically. Open <code>html/index.html</code> in your
+  text editor, make a change, and save it. Refresh the page in your browser. You should
+  see your change.</p>
+</section>
+      
+      <footer>Copyright 2014 Jarrett Colby. All rights reserved.</footer>
+    </div>
+  </body>
+</html>

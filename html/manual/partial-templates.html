@@ -1,0 +1,78 @@
+<% @page_title = 'Partial Templates'; @body_class = 'manual' %>
+
+<section>
+  <h1>Partial Templates</h1>
+  
+  <p>If you need to reuse the same piece of HTML on multiple pages, but creating a layout
+  would be inappropriate, then you can use a partial template.</p>
+  
+  <section>
+    <h2>Creating a Partial Template File</h2>
+    
+    <p>For this example, let's say you're writing a reusable "contact us" box. Anywhere in
+    the <code>html</code> folder, create a new file called <code>_contact.html</code>.
+    Write some HTML in it, e.g.:</p>
+    
+    <%= code_block(6, %Q(
+      <div class="contact">
+        Email: <a href="mailto:contact@example.com">contact@example.com</a>
+        Phone: (555) 555-5555
+      </div>
+    )) %>
+  </section>
+  
+  <section>
+    <h2>Including a Partial in Another File</h2>
+    
+    <p>Now you can call that partial from any other HTML file (including another
+    partial):</p>
+    
+    <%= code_block(6, %Q(
+      <p>Lorem ipsum...</p>
+      
+      \<%= partial '_contact.html' %\>
+      
+      <p>Dolor sit amet...</p>
+    )) %>
+  </section>
+  
+  <section>
+    <h2>Partial Template Parameters</h2>
+    
+    <p>You can pass parameters to a partial template, and they'll be available as
+    instance variables. Define a partial like this:</p>
+    
+    <%= code_block(6, %Q(
+      <!-- _contact.html -->
+      <p>
+        Phone: \<%= @phone %\>
+      </p>
+    )) %>
+    
+    <p>You can then call the partial like this:</p>
+    
+    <%= code_block(6, %Q(
+      <%= partial '_contact.html', ivars: {phone: '(555) 555-5555'} %\>
+    )) %>
+    
+    <p>Partial templates automatically inherit the instance variables from the calling
+    context. Variables in the <code>:ivars</code> option will overwrite variables from the
+    calling context.</p>
+  </section>
+  
+  <section>
+    <h2>Dependencies</h2>
+    
+    <p>As always, you're responsible for declaring dependencies. If you want to edit a
+    partial and have the including pages automatically update, you need to declare the
+    dependency between them:</p>
+    
+    <%= code_block(6, %Q(
+      # config.rb
+      cfg.dependencies = {
+        'html/_contact.html' => 'html/some-other-page.html'
+        # Other dependencies here...
+      }
+    )) %>
+  </section>
+</section>

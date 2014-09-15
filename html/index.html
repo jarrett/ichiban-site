@@ -1,0 +1,79 @@
+<% @body_class = 'home' %>
+
+<h1>
+  <span class="title">Ichiban</span>
+  <span class="subtitle">The Ruby Static Site Compiler</span>
+</h1>
+
+<img id="ichiban-logo" src="/img/ichiban.png?v=0", alt="Illustration: Tower crane lifting ruby"/>
+
+<div id="main-features">
+  <ul>
+    <li data-target="#compiles-as-you-code">
+      Compiles<br/>as You Code
+      <span class="arrow">&#9660;</span>
+    </li>
+    <li data-target="#fills-templates">
+      Fills Templates<br/>with Data
+      <span class="arrow">&#9660;</span>
+    </li>
+    <li data-target="#full-power-ruby">
+      The Full<br/>Power of Ruby
+      <span class="arrow">&#9660;</span>
+    </li>
+    <li data-target="#much-more">
+      And Much<br/>More…
+      <span class="arrow">&#9660;</span>
+    </li>
+  </ul>
+
+  <div class="panel">
+    <ul id="main-features-slides">
+      <li id="compiles-as-you-code">
+        <p>Ichiban automatically compiles your site whenever you save a source file.
+        So there's no need to switch to the terminal and run a compiler every time you
+        change something. To use automatic compilation, start the watcher:</p>
+        
+        <code class="block">cd my-project<br/>ichiban watch</code>
+        
+        <p>Now change a file, save it, and refresh your browser. Your changes will be
+        reflected immediately.</p>
+      </li>
+    
+      <li id="fills-templates">
+        <p>Sometimes you need to generate HTML from a data source, like a CSV or XML file.
+        Ichiban has you covered. You can write a loop inside a single page, or even
+        generate a completely new page for each loop iteration.</p>
+        
+        <p>Say you have a bunch of employees in a CSV file. You can write a script like
+        this:</p>
+        
+        <code class="block">CSV.parse('employees.csv').each do |first, last|<br/>  generate '_employee.html', 'employees/' + last, first: first, last: last<br/>end</code>
+        
+        <p>The above will use the template <code>_employee.html</code> to generate an
+        individual page for each employee in the CSV file.</p>
+      </li>
+    
+      <li id="full-power-ruby">
+        <p>Ichiban is Ruby through-and-through. With ERB templates, you can embed any logic
+        you can imagine into your HTML. Write custom helper methods, use conditionals,
+        generate sophisticated nav menus, loop over data&mdash;it's all possible with
+        Ichiban.</p>
+      </li>
+    
+      <li id="much-more">
+        <p>Ichiban has plenty of handy features. Some standouts:</p>
+        
+        <ul>
+          <li>Reusable layouts, and even nested layouts</li>
+          <li>Nav menu generator</li>
+          <li>SCSS</li>
+          <li>Markdown</li>
+          <li>JS minification (with source maps for debugging)</li>
+          <li>EJS templates</li>
+        </ul>
+      </li>
+    
+    </ul>
+  </div>
+</div>

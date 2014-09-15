@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Partial Templates - 
+      Ichiban
+    </title>
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,700,400" rel="stylesheet" type="text/css">
+    <link href="/css/screen.css" type="text/css" rel="stylesheet" media="screen"/>
+    
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/js/site.js"></script>
+  </head>
+  
+  <body class="manual">
+    <header>
+      <div class="container">
+        <nav>
+          <h2><a href="/">Ichiban</a></h2>
+              
+          <ul id="main-nav">
+            <li><a href="/manual/">Manual</a></li>
+            <li><a href="/manual/getting-started/">Getting Started</a></li>
+            <li><a href="https://github.com/jarrett/ichiban" target="_blank">Github</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  
+    <div class="container">
+      
+<section>
+  <h1>Partial Templates</h1>
+  
+  <p>If you need to reuse the same piece of HTML on multiple pages, but creating a layout
+  would be inappropriate, then you can use a partial template.</p>
+  
+  <section>
+    <h2>Creating a Partial Template File</h2>
+    
+    <p>For this example, let's say you're writing a reusable "contact us" box. Anywhere in
+    the <code>html</code> folder, create a new file called <code>_contact.html</code>.
+    Write some HTML in it, e.g.:</p>
+    
+    <code class="block">&lt;div class=&quot;contact&quot;&gt;
+  Email: &lt;a href=&quot;mailto:contact@example.com&quot;&gt;contact@example.com&lt;/a&gt;
+  Phone: (555) 555-5555
+&lt;/div&gt;
+</code>
+  </section>
+  
+  <section>
+    <h2>Including a Partial in Another File</h2>
+    
+    <p>Now you can call that partial from any other HTML file (including another
+    partial):</p>
+    
+    <code class="block">&lt;p&gt;Lorem ipsum...&lt;/p&gt;
+
+&lt;%= partial &#39;_contact.html&#39; %&gt;
+
+&lt;p&gt;Dolor sit amet...&lt;/p&gt;
+</code>
+  </section>
+  
+  <section>
+    <h2>Partial Template Parameters</h2>
+    
+    <p>You can pass parameters to a partial template, and they'll be available as
+    instance variables. Define a partial like this:</p>
+    
+    <code class="block">&lt;!-- _contact.html --&gt;
+&lt;p&gt;
+  Phone: &lt;%= @phone %&gt;
+&lt;/p&gt;
+</code>
+    
+    <p>You can then call the partial like this:</p>
+    
+    <code class="block">&lt;%= partial &#39;_contact.html&#39;, ivars: {phone: &#39;(555) 555-5555&#39;} %&gt;
+</code>
+    
+    <p>Partial templates automatically inherit the instance variables from the calling
+    context. Variables in the <code>:ivars</code> option will overwrite variables from the
+    calling context.</p>
+  </section>
+  
+  <section>
+    <h2>Dependencies</h2>
+    
+    <p>As always, you're responsible for declaring dependencies. If you want to edit a
+    partial and have the including pages automatically update, you need to declare the
+    dependency between them:</p>
+    
+    <code class="block"># config.rb
+cfg.dependencies = {
+  &#39;html/_contact.html&#39; =&gt; &#39;html/some-other-page.html&#39;
+  # Other dependencies here...
+}
+</code>
+  </section>
+</section>
+      
+      <footer>Copyright 2014 Jarrett Colby. All rights reserved.</footer>
+    </div>
+  </body>
+</html>

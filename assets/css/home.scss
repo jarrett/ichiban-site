@@ -1,0 +1,40 @@
+body.home {
+  h1 {float: left; width: 40%; margin: 25px 15% 0 5%;}
+  h1 span.title {display: block; font-size: 88px;  font-weight: 700; color: black; margin-left: -6px;}
+  h1 span.subtitle {display: block; font-size: 24px;  font-weight: 300;}
+  img#ichiban-logo {width: 35%; float: left; margin: 25px 0 30px 0;}
+  div#main-features {
+    clear: left;
+    > ul {
+      list-style-type: none; margin: 100px 0 20px 0; padding: 0; overflow: hidden;
+      li {
+        float: left; width: 25%; margin: 0; padding: 0; font-size: 23px; color: #757575;
+        text-align: center; cursor: pointer;
+      }
+      span.arrow {display: block; opacity: 0; font-size: 13px; color: #c0c0c0; color: #ce6767; margin-top: 4px;}
+      li.current {color: black;}
+      li.current span.arrow {opacity: 1; text-shadow: none;}
+    }
+  }
+  ul#main-features-slides {
+    list-style-type: none; margin: 0; padding: 0; position: relative;
+    > li {height: 206px; margin: 0; padding: 0; font-size: 16px;}
+    code.block {background: #fcfcfc;}
+  }
+}
+
+@media (max-width: 860px) {
+  body.home {
+    h1 span.title {display: block; font-size: 59px;}
+    h1 span.subtitle {display: block; font-size: 16px;}
+    div#main-features > ul li {font-size: 18px;}
+  }
+}
+
+@media (max-width: 600px) {
+  body.home {
+    h1 span.title {display: block; font-size: 44px; margin-left: -3px;}
+    h1 span.subtitle {display: block; font-size: 12px;}
+    div#main-features > ul li {font-size: 14px;}
+  }
+}

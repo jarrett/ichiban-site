@@ -1,0 +1,49 @@
+<% @page_title = 'Getting Started'; @body_class = 'manual' %>
+
+<section>
+  <h1>Getting Started</h1>
+  
+  <p>Install Ichiban and create a new project:</p>
+  
+  <%= code_block(4, %Q(
+    gem install ichiban
+    ichiban new my-site
+    cd my-site
+    bundle install
+  )) %>
+  
+  <p>If you're using Apache, set up a virtual host:</p>
+  
+  <%= code_block(4, %Q(
+    Listen 3000
+    <VirtualHost *:3000>
+      DocumentRoot "/Users/username/Sites/my-site/compiled"
+      <Directory "/Users/username/Sites/my-site/compiled">
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+      </Directory>
+    </VirtualHost>
+  )) %>
+  
+  <p>Replace the paths in the example above with the right ones for your folder layout.
+  If you're not using Apache, start your webserver of choice and set its document root
+  to the <code>compiled</code> folder.</p>
+  
+  <p>To make sure your virtual host is working, point your browser to
+  <code>http://localhost:3000/</code>.</p>
+  
+  <p>Start the watcher.</p>
+  
+  <%= code_block(4, %Q(
+    ichiban watch
+    
+    # Or, to avoid possible gem version issues:
+    bundle exec ichiban watch
+  )) %>
+  
+  <p>With this running, any changes you make will be reflected in the
+  <code>compiled</code> folder automatically. Open <code>html/index.html</code> in your
+  text editor, make a change, and save it. Refresh the page in your browser. You should
+  see your change.</p>
+</section>
