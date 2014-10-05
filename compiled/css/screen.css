@@ -118,6 +118,30 @@ body.home ul#main-features-slides {
     font-size: 12px; }
   body.home div#main-features > ul li {
     font-size: 14px; } }
+@media (max-width: 470px) {
+  body.home header {
+    padding-top: 0; }
+  body.home header h2 {
+    display: none; }
+  body.home header ul#main-nav {
+    border-top: none; }
+  body.home h1 {
+    float: none;
+    width: auto;
+    text-align: center;
+    margin: 0; }
+  body.home h1 span.title, body.home h1 span.subtitle {
+    font-size: 20px;
+    display: inline; }
+  body.home h1 span.title {
+    font-weight: 400; }
+  body.home h1 span.title:after {
+    content: ":"; }
+  body.home img#ichiban-logo {
+    float: none;
+    display: block;
+    width: 70%;
+    margin: 0 auto; } }
 body.manual section section section {
   margin-left: 20px; }
 body.manual h2 {

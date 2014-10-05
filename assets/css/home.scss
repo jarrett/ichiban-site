@@ -1,3 +1,5 @@
+@import "library";
+
 body.home {
   h1 {float: left; width: 40%; margin: 25px 15% 0 5%;}
   h1 span.title {display: block; font-size: 88px;  font-weight: 700; color: black; margin-left: -6px;}
@@ -36,5 +38,18 @@ body.home {
     h1 span.title {display: block; font-size: 44px; margin-left: -3px;}
     h1 span.subtitle {display: block; font-size: 12px;}
     div#main-features > ul li {font-size: 14px;}
+  }
+}
+
+@media (max-width: $mobile-w) {
+  body.home {
+    header {padding-top: 0;}
+    header h2 {display: none;}
+    header ul#main-nav {border-top: none;}
+    h1 {float: none; width: auto; text-align: center; margin: 0;}
+    h1 span.title, h1 span.subtitle {font-size: 20px; display: inline;}
+    h1 span.title {font-weight: 400;}
+    h1 span.title:after {content: ":";}
+    img#ichiban-logo {float: none; display: block; width: 70%; margin: 0 auto;}
   }
 }
