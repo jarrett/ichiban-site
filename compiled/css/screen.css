@@ -69,34 +69,17 @@ body.home div#main-features {
       float: left;
       width: 25%;
       margin: 0;
-      padding: 0;
+      padding: 0; }
+    body.home div#main-features > ul a:link, body.home div#main-features > ul a:visited, body.home div#main-features > ul a:hover, body.home div#main-features > ul a:active {
+      display: block;
       font-size: 23px;
-      color: #757575;
+      color: #555555;
+      text-decoration: none;
       text-align: center;
       cursor: pointer; }
-    body.home div#main-features > ul span.arrow {
-      display: block;
-      opacity: 0;
-      font-size: 13px;
-      color: #c0c0c0;
-      color: #ce6767;
-      margin-top: 4px; }
-    body.home div#main-features > ul li.current {
+    body.home div#main-features > ul a:hover {
       color: black; }
-    body.home div#main-features > ul li.current span.arrow {
-      opacity: 1;
-      text-shadow: none; }
-body.home ul#main-features-slides {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  position: relative; }
-  body.home ul#main-features-slides > li {
-    height: 206px;
-    margin: 0;
-    padding: 0;
-    font-size: 16px; }
-  body.home ul#main-features-slides code.block {
+  body.home div#main-features code.block {
     background: #fcfcfc; }
 
 @media (max-width: 860px) {

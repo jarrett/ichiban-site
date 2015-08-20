@@ -1,1 +1,0 @@
-// Nothing here yet. This JS file is referenced from the default layout.
